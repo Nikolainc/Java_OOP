@@ -7,9 +7,9 @@ public abstract class Drinks extends Product {
 
     protected int volume;
     
-    protected Drinks(String name, int cost, TypeProduct type, int volume) {
+    protected Drinks(String name, TypeProduct type, int volume) {
 
-        super(name, cost, type);
+        super(name, type);
         this.volume = volume;
 
     }

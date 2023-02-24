@@ -6,6 +6,8 @@ public enum TypeDevice {
     RAM_MEMORY,
     MAIN_MEMORY,
     DISPLAY,
-    PROCESSOR
+    PROCESSOR,
+    LAPTOP,
+    PC
 
 }

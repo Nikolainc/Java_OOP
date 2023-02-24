@@ -2,16 +2,25 @@ package Class.Products.Devices;
 
 import Class.Products.Product;
 import Enum.TypeProduct;
+import Enum.Device.BrandType;
 import Enum.Device.TypeDevice;
 
 public abstract class Device extends Product{
     
+    protected BrandType brand;
     protected TypeDevice typeDevice;
 
-    protected Device(String name, int cost, TypeDevice typeDevice) {
+    protected Device(String name, TypeDevice typeDevice, BrandType brand) {
 
-        super(name, cost, TypeProduct.DEVICE);
+        super(name, TypeProduct.DEVICE);
         this.typeDevice = typeDevice;
+        this.brand = brand;
+
+    }
+
+    public BrandType gBrandType() {
+
+        return this.brand;
 
     }
 
@@ -26,11 +35,17 @@ public abstract class Device extends Product{
         
         if (obj instanceof Device) {
 
-            return super.equals(obj) && this.equals(((Device)obj).gTypeDevice());
+            return super.equals(obj) && this.equals(((Device)obj).gTypeDevice(), ((Device) obj).gBrandType());
 
         }
 
         return false;
+
+    }
+
+    public boolean equals(TypeDevice typeDevice, BrandType brand) {
+
+        return this.equals(typeDevice) && this.equals(brand);
 
     }
 
@@ -40,5 +55,10 @@ public abstract class Device extends Product{
 
     }
 
-    
+    public boolean equals(BrandType brand) {
+
+        return this.brand.equals(brand);
+
+    }
+
 }

@@ -17,11 +17,11 @@ class program {
 
         HotDrinksAutomat<HotDrinks> coffeeMachine = new HotDrinksAutomat<>();
 
-        HotDrinks latte100 = new HotDrinks(latteName, 450, 100, 65);
-        HotDrinks latte1001 = new HotDrinks(latteName, 450, 100, 65);
-        HotDrinks latte250 = new HotDrinks(latteName, 450, 250, 65);
-        HotDrinks americano100 = new HotDrinks(AmericanoName, 260, 100, 90);
-        HotDrinks americano250 = new HotDrinks(AmericanoName, 260, 250, 90);
+        HotDrinks latte100 = new HotDrinks(latteName, 100, 65);
+        HotDrinks latte1001 = new HotDrinks(latteName, 100, 65);
+        HotDrinks latte250 = new HotDrinks(latteName, 250, 65);
+        HotDrinks americano100 = new HotDrinks(AmericanoName, 100, 90);
+        HotDrinks americano250 = new HotDrinks(AmericanoName, 250, 90);
 
         System.out.println(coffeeMachine.addProduct(latte100));
         System.out.println(coffeeMachine.addProduct(latte1001));

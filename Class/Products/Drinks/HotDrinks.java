@@ -6,9 +6,9 @@ public class HotDrinks extends Drinks {
 
     protected int temp;
 
-    public HotDrinks(String name, int cost, int volume, int temp) {
+    public HotDrinks(String name, int volume, int temp) {
 
-        super(name, cost, TypeProduct.COFFEE, volume);
+        super(name, TypeProduct.COFFEE, volume);
         this.temp = temp;
 
     }

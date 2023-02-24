@@ -16,7 +16,7 @@ public class HotDrinksAutomat<T extends HotDrinks> extends DrinksAutomat<T> impl
 
     public T getProduct(String name, int volume, int temp) {
 
-        var reqest = new HotDrinks(name, 0, volume, temp);
+        var reqest = new HotDrinks(name, volume, temp);
 
         if (super.products.indexOf(reqest) != -1) {
 

@@ -5,13 +5,11 @@ import Enum.*;
 public abstract class Product {
 
     protected TypeProduct type;
-    protected int cost;
     protected String name;
 
-    protected Product(String name, int cost, TypeProduct type) {
+    protected Product(String name, TypeProduct type) {
 
         this.name = name;
-        this.cost = cost;
         this.type = type;
 
     }
@@ -19,12 +17,6 @@ public abstract class Product {
     public String getName() {
 
         return this.name;
-
-    }
-
-    public int getCost() {
-
-        return this.cost;
 
     }
 
@@ -37,7 +29,7 @@ public abstract class Product {
     @Override
     public String toString() {
 
-        return String.format("\nType: %s\nName: %s\nCost: %s RUB", type, name, cost);
+        return String.format("\nType: %s\nName: %s", type, name);
 
     }
 
