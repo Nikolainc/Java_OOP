@@ -38,7 +38,7 @@ public abstract class Product {
 
         if (obj instanceof Product) {
 
-            return this.equals(((Product) obj).getName());
+            return this.name.equals(((Product) obj).getName());
 
         }
 

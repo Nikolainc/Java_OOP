@@ -31,7 +31,7 @@ public class HotDrinks extends Drinks {
 
         if (obj instanceof HotDrinks) {
 
-            return super.equals(obj) && this.equals(((HotDrinks) obj).getTemp());
+            return super.equals(obj) && (this.temp == ((HotDrinks) obj).getTemp());
 
         }
         
@@ -39,9 +39,9 @@ public class HotDrinks extends Drinks {
 
     }
 
-    public boolean equals(String obj, int vol, int temp) {
+    public boolean equals(int vol, int temp) {
 
-        return super.equals(obj, vol) && this.equals(temp);
+        return super.equals(vol) && this.equals(temp);
 
     }
 
@@ -51,5 +51,6 @@ public class HotDrinks extends Drinks {
         return this.temp == temp;
 
     }
+
     
 }

@@ -1,4 +1,4 @@
-package Lesson_01;
+package HomeWork.HomeWork_01;
 
 import Class.Automats.DrinksAutomat.HotDrinksAutomat.HotDrinksAutomat;
 import Class.Products.Drinks.HotDrinks;
@@ -32,7 +32,7 @@ class program {
 
         System.out.println(coffeeMachine.getProduct("Latte"));
         System.out.println(coffeeMachine.getProduct("Chocolate"));
-        System.out.println(coffeeMachine.getProduct("Americano",100,90));
+        System.out.println(coffeeMachine.getProduct(AmericanoName,100,90));
         
     }
 }
