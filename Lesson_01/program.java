@@ -1,8 +1,5 @@
 package Lesson_01;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import Lesson_01.Class.Automats.DrinksAutomat.HotDrinksAutomat.HotDrinksAutomat;
 import Lesson_01.Class.Products.Drinks.HotDrinks;
 
