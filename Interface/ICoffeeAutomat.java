@@ -1,4 +1,4 @@
-package Lesson_01.Interface;
+package Interface;
 
 public interface ICoffeeAutomat<T> extends IAutomat<T>{
 

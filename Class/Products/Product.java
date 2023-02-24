@@ -1,6 +1,6 @@
-package Lesson_01.Class.Products;
+package Class.Products;
 
-import Lesson_01.Enum.*;
+import Enum.*;
 
 public abstract class Product {
 
@@ -22,6 +22,18 @@ public abstract class Product {
 
     }
 
+    public int getCost() {
+
+        return this.cost;
+
+    }
+
+    public TypeProduct gTypeProduct() {
+
+        return this.type;
+
+    }
+
     @Override
     public String toString() {
 
@@ -34,7 +46,7 @@ public abstract class Product {
 
         if (obj instanceof Product) {
 
-            return this.name.equals(((Product) obj).getName());
+            return this.equals(((Product) obj).getName());
 
         }
 
@@ -45,6 +57,12 @@ public abstract class Product {
     public boolean equals(String obj) {
 
         return this.name.equals(obj);
+
+    }
+
+    public boolean equals(TypeProduct type) {
+
+        return this.type.equals(type);
 
     }
     

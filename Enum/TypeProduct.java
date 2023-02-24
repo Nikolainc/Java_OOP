@@ -1,4 +1,4 @@
-package Lesson_01.Enum;
+package Enum;
 
 public enum TypeProduct {
 
@@ -7,5 +7,6 @@ public enum TypeProduct {
     CHOCOLATE,
     COFFEE,
     TEA,
+    DEVICE
     
 }

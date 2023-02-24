@@ -1,10 +1,10 @@
-package Lesson_01.Class.Automats.DrinksAutomat.HotDrinksAutomat;
+package Class.Automats.DrinksAutomat.HotDrinksAutomat;
 
 import java.util.List;
 
-import Lesson_01.Class.Automats.DrinksAutomat.DrinksAutomat;
-import Lesson_01.Class.Products.Drinks.HotDrinks;
-import Lesson_01.Interface.ICoffeeAutomat;
+import Class.Automats.DrinksAutomat.DrinksAutomat;
+import Class.Products.Drinks.HotDrinks;
+import Interface.ICoffeeAutomat;
 
 public class HotDrinksAutomat<T extends HotDrinks> extends DrinksAutomat<T> implements ICoffeeAutomat<T>{
 

@@ -1,6 +1,6 @@
-package Lesson_01.Class.Products.Drinks;
+package Class.Products.Drinks;
 
-import Lesson_01.Enum.TypeProduct;
+import Enum.TypeProduct;
 
 public class HotDrinks extends Drinks {
 
@@ -31,7 +31,7 @@ public class HotDrinks extends Drinks {
 
         if (obj instanceof HotDrinks) {
 
-            return super.equals(obj) && (this.temp == ((HotDrinks) obj).getTemp());
+            return super.equals(obj) && this.equals(((HotDrinks) obj).getTemp());
 
         }
         
@@ -41,7 +41,14 @@ public class HotDrinks extends Drinks {
 
     public boolean equals(String obj, int vol, int temp) {
 
-        return super.equals(obj, vol) && this.temp == temp;
+        return super.equals(obj, vol) && this.equals(temp);
+
+    }
+
+    @Override
+    public boolean equals(int temp) {
+
+        return this.temp == temp;
 
     }
     

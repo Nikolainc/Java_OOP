@@ -1,7 +1,7 @@
-package Lesson_01.Class.Automats.DrinksAutomat;
+package Class.Automats.DrinksAutomat;
 
-import Lesson_01.Class.Automats.TradingAutomat;
-import Lesson_01.Class.Products.Drinks.Drinks;
+import Class.Automats.TradingAutomat;
+import Class.Products.Drinks.Drinks;
 
 public abstract class DrinksAutomat<T extends Drinks> extends TradingAutomat<T> {
 

@@ -1,4 +1,4 @@
-package Lesson_01.Interface;
+package Interface;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package Lesson_01.Class.Products.Drinks;
+package Class.Products.Drinks;
 
-import Lesson_01.Class.Products.Product;
-import Lesson_01.Enum.TypeProduct;
+import Class.Products.Product;
+import Enum.TypeProduct;
 
 public abstract class Drinks extends Product {
 
@@ -32,7 +32,7 @@ public abstract class Drinks extends Product {
 
         if (obj instanceof Drinks) {
 
-            return super.equals(obj) && (this.volume == ((Drinks)obj).getVolume());
+            return super.equals(obj) && this.equals(((Drinks)obj).getVolume());
         }
         
         return false;
@@ -40,7 +40,13 @@ public abstract class Drinks extends Product {
     
     public boolean equals(String obj, int vol) {
 
-        return super.equals(obj) && this.volume == vol;
+        return super.equals(obj) && this.equals(vol);
+
+    }
+
+    public boolean equals(int volume) {
+        
+        return this.volume == volume;
 
     }
     
