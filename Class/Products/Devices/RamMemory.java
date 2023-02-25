@@ -1,5 +1,7 @@
 package Class.Products.Devices;
 
+import java.util.Objects;
+
 import Enum.Device.BrandType;
 import Enum.Device.MemorySize;
 import Enum.Device.MemoryType;
@@ -32,7 +34,7 @@ public class RamMemory extends Memory {
     @Override
     public boolean equals(Object obj) {
         
-        if (obj instanceof RamMemory) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.equals(((RamMemory)obj).gFrequency());
 
@@ -45,6 +47,13 @@ public class RamMemory extends Memory {
     public boolean equals(int freq) {
 
         return this.frequency == freq;
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * Objects.hash(this.frequency);
 
     }
     

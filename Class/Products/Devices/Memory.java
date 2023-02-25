@@ -1,5 +1,7 @@
 package Class.Products.Devices;
 
+import java.util.Objects;
+
 import Enum.Device.BrandType;
 import Enum.Device.MemorySize;
 import Enum.Device.MemoryType;
@@ -40,7 +42,7 @@ public abstract class Memory extends Device {
     @Override
     public boolean equals(Object obj) {
 
-        if (obj instanceof Memory) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.equals(((Memory) obj).gMemorySize(), ((Memory) obj).gMemoryType());
 
@@ -65,6 +67,13 @@ public abstract class Memory extends Device {
     public boolean equals(MemoryType mtype) {
 
         return this.mtype.equals(mtype);
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * Objects.hash(this.msize, this.mtype);
 
     }
     

@@ -1,5 +1,7 @@
 package Class.Products.Devices;
 
+import java.util.Objects;
+
 import Enum.Device.BrandType;
 import Enum.Device.TypeDevice;
 
@@ -30,7 +32,7 @@ public class Processor extends Device{
     @Override
     public boolean equals(Object obj) {
         
-        if (obj instanceof Processor) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.equals(((Processor)obj).gFrequency());
 
@@ -43,6 +45,13 @@ public class Processor extends Device{
     public boolean equals(float freq) {
 
         return this.frequency == freq;
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * Objects.hash(this.frequency);
 
     }
 

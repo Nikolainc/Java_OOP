@@ -3,6 +3,7 @@ package Class.Automats;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import Class.Products.Product;
@@ -62,7 +63,7 @@ public abstract class TradingAutomat<T extends Product> implements IAutomat<T>, 
     @Override
     public Iterator<T> iterator() {
 
-        Iterator<T> iterator = new Iterator<T>() {
+        return new Iterator<T>() {
 
             private int index = 0;
 
@@ -76,13 +77,17 @@ public abstract class TradingAutomat<T extends Product> implements IAutomat<T>, 
             @Override
             public T next() {
 
+                if (index >= products.size()) {
+
+                    throw new NoSuchElementException();
+                    
+                }
+                
                 return products.get(index++);
 
             }
 
         };
-
-        return iterator;
 
     }
 

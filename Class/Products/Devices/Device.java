@@ -1,5 +1,7 @@
 package Class.Products.Devices;
 
+import java.util.Objects;
+
 import Class.Products.Product;
 import Enum.TypeProduct;
 import Enum.Device.BrandType;
@@ -40,7 +42,7 @@ public abstract class Device extends Product{
     @Override
     public boolean equals(Object obj) {
         
-        if (obj instanceof Device) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.equals(((Device)obj).gTypeDevice(), ((Device) obj).gBrandType());
 
@@ -65,6 +67,13 @@ public abstract class Device extends Product{
     public boolean equals(BrandType brand) {
 
         return this.brand.equals(brand);
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * Objects.hash(this.brand, this.typeDevice);
 
     }
 

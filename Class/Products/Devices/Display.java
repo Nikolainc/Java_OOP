@@ -1,5 +1,7 @@
 package Class.Products.Devices;
 
+import java.util.Objects;
+
 import Enum.Device.BrandType;
 import Enum.Device.TypeDevice;
 
@@ -30,7 +32,7 @@ public class Display extends Device {
     @Override
     public boolean equals(Object obj) {
         
-        if(obj instanceof Display) {
+        if(obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.equals(((Display)obj).gDiagonal());
 
@@ -43,6 +45,13 @@ public class Display extends Device {
     public boolean equals(int diagonal) {
 
         return this.diagonal == diagonal;
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * Objects.hash(this.diagonal);
 
     }
     

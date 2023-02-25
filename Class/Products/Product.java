@@ -1,5 +1,7 @@
 package Class.Products;
 
+import java.util.Objects;
+
 import Enum.*;
 
 public abstract class Product {
@@ -36,7 +38,7 @@ public abstract class Product {
     @Override
     public boolean equals(Object obj) {
 
-        if (obj instanceof Product) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return this.equals(((Product) obj).getName(), ((Product)obj).gTypeProduct());
 
@@ -46,21 +48,28 @@ public abstract class Product {
 
     }
 
-    public boolean equals(String obj, TypeProduct type) {
+    public boolean equals(String name, TypeProduct type) {
 
-        return this.equals(obj) && this.equals(type);
+        return this.equals(name) && this.equals(type);
 
     }
 
-    public boolean equals(String obj) {
+    public boolean equals(String name) {
 
-        return this.name.equals(obj);
+        return this.name.equals(name);
 
     }
 
     public boolean equals(TypeProduct type) {
 
         return this.type.equals(type);
+
+    }
+
+    @Override
+    public int hashCode() {
+        
+        return 13 * Objects.hash(this.name, this.type);
 
     }
     

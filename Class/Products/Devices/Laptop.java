@@ -64,7 +64,7 @@ public class Laptop extends Device {
     @Override
     public boolean equals(Object obj) {
 
-        if (obj instanceof Laptop) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.equals(((Laptop)obj).gDisplay(), 
                     ((Laptop) obj).gMainMemory(), ((Laptop) obj).gRamMemory(), 
@@ -78,6 +78,13 @@ public class Laptop extends Device {
     public boolean equals(Display display, MainMemory mainMemory, RamMemory ramMemory, Processor processor, TypeOS typeOS) {
 
         return this.display.equals(display) && this.memory.equals(mainMemory) && this.ramMemory.equals(ramMemory) && this.processor.equals(processor) && this.operationSystem.equals(typeOS);
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * this.display.hashCode() * this.memory.hashCode() * this.ramMemory.hashCode() * this.processor.hashCode() * this.operationSystem.hashCode();
 
     }
     

@@ -1,5 +1,7 @@
 package Class.Products.Drinks;
 
+import java.util.Objects;
+
 import Class.Products.Product;
 import Enum.TypeProduct;
 
@@ -30,7 +32,7 @@ public class Drinks extends Product {
     @Override
     public boolean equals(Object obj) {
 
-        if (obj instanceof Drinks) {
+        if (obj != null && obj.getClass() == this.getClass()) {
 
             return super.equals(obj) && this.volume == ((Drinks)obj).getVolume();
             
@@ -42,6 +44,13 @@ public class Drinks extends Product {
     public boolean equals(int volume) {
         
         return this.volume == volume;
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return super.hashCode() * Objects.hash(this.volume);
 
     }
     
