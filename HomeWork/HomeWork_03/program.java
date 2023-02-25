@@ -1,5 +1,9 @@
 package HomeWork.HomeWork_03;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import Class.Automats.DeviceAutomat.LaptopAutomat.LaptopAutomat;
 import Class.Products.Devices.*;
 import Enum.Device.*;
@@ -30,7 +34,7 @@ public class program {
                 new Display("15", BrandType.ASUS, 15),
                 new MainMemory("EVO 900", BrandType.SAMSUNG, MemorySize.K,
                         MemoryType.SSD),
-                new RamMemory("9980", BrandType.HYNIX, MemorySize.D, 2800,
+                new RamMemory("9980", BrandType.HYNIX, MemorySize.D, 1800,
                         MemoryType.DDR4),
                 new Processor("I9", BrandType.INTEL, 3.4f),
                 TypeOS.FREEBSD);
@@ -39,9 +43,9 @@ public class program {
                 "MACBOOK AIR",
                 BrandType.APPLE,
                 new Display("13", BrandType.APPLE, 13),
-                new MainMemory("ALP 999", BrandType.SAMSUNG, MemorySize.K,
+                new MainMemory("ALP 999", BrandType.SAMSUNG, MemorySize.M,
                         MemoryType.SSD),
-                new RamMemory("Memory", BrandType.APPLE, MemorySize.C, 2888,
+                new RamMemory("Memory", BrandType.APPLE, MemorySize.C, 5000,
                         MemoryType.DDR5),
                 new Processor("M2", BrandType.APPLE, 3.4f),
                 TypeOS.MACOS);
@@ -54,6 +58,16 @@ public class program {
 
             System.out.println(iterable_element);
             
+        }
+
+        System.out.println("\nСортировка по частоте оперативки\n");
+
+        mvideo_laptops.getProducts().sort((x, y) -> Integer.compare(x.gRamMemory().gFrequency(), y.gRamMemory().gFrequency()));
+
+        for (var iterable_element : mvideo_laptops) {
+
+            System.out.println(iterable_element);
+
         }
         
     }
