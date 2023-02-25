@@ -25,8 +25,16 @@ public class Request<T extends Product> implements IRequest<T> {
     @Override
     public List<T> filter(List<T> req) {
 
-        return req.stream().filter(element -> element.getName().equals(
-                this.name)).collect(Collectors.toList());
+        if (this.name.equals("")) {
+
+            return req;
+
+        } else {
+
+            return req.stream().filter(element -> element.getName().equals(
+                    this.name)).collect(Collectors.toList());
+
+        }
 
     }
     

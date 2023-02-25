@@ -1,9 +1,5 @@
 package HomeWork.HomeWork_03;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 import Class.Automats.DeviceAutomat.LaptopAutomat.LaptopAutomat;
 import Class.Products.Devices.*;
 import Enum.Device.*;

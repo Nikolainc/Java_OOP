@@ -16,11 +16,37 @@ public class RequestDrinks<T extends Drinks> extends Request<T> {
         this.volume = volume;
 
     }
+
+    public RequestDrinks(int volume) {
+
+        super();
+        this.volume = volume;
+
+    }
+
+    protected RequestDrinks() {
+
+        super();
+        this.volume = -1;
+
+    }
+
     
     @Override
     public List<T> filter(List<T> req) {
 
-        return super.filter(req).stream().filter(element -> element.getVolume() == this.volume).collect(Collectors.toList());
+        if (this.volume == -1) {
+
+            return req;
+
+        } else {
+
+            return super.filter(req).stream().filter(element -> element.getVolume() == this.volume)
+                    .collect(Collectors.toList());
+
+        }
+
+        
         
     }
 
