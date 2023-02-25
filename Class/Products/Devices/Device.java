@@ -21,7 +21,7 @@ public abstract class Device extends Product{
     @Override
     public String toString() {
 
-        return String.format("%s\nBrand: %s\nDevice: %s", super.toString(), this.brand, this.typeDevice);
+        return String.format("Name: %s", this.name);
 
     }
 

@@ -1,10 +1,12 @@
 package Class.Products.Devices;
 
+import java.util.Iterator;
+
 import Enum.Device.BrandType;
 import Enum.Device.TypeDevice;
 import Enum.Device.TypeOS;
 
-public class Laptop extends Device {
+public class Laptop extends Device implements Iterator<Device> {
 
     protected Display display;
     protected MainMemory memory;
@@ -27,7 +29,7 @@ public class Laptop extends Device {
     @Override
     public String toString() {
 
-        return String.format("%s\nDisplay: %s\nMemory: %s\nRAM: %s\nProcessor: %s\nOS: %s", super.toString(), this.display, this.memory, this.ramMemory, this.processor, this.operationSystem);
+        return String.format("%s, %s, %s, %s, %s, %s\n", super.toString(), this.display, this.memory, this.ramMemory, this.processor, this.operationSystem);
 
     }
 
@@ -79,6 +81,40 @@ public class Laptop extends Device {
 
         return this.display.equals(display) && this.memory.equals(mainMemory) && this.ramMemory.equals(ramMemory) && this.processor.equals(processor) && this.operationSystem.equals(typeOS);
 
+    }
+
+    int index;
+
+    @Override
+    public boolean hasNext() {
+        return index++ < 4;
+    }
+
+    @Override
+    public Device next() {
+
+        switch (index) {
+
+            case 1:
+                
+                return gDisplay();
+
+            case 2:
+
+                return gMainMemory();
+            
+            case 3:
+
+                return gRamMemory();
+
+            case 4:
+
+                return gProcessor();
+
+            default:
+
+                return null;
+        }
     }
     
 }

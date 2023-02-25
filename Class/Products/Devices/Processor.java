@@ -17,7 +17,7 @@ public class Processor extends Device{
     @Override
     public String toString() {
 
-        return String.format("%s - %s GHz", this.name, this.frequency);
+        return String.format("%s %s GHz", this.name, this.frequency);
 
     }
 

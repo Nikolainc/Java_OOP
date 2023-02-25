@@ -22,7 +22,7 @@ public class HotDrinks extends Drinks {
     @Override
     public String toString() {
 
-        return String.format("%s\nTemperture: %s C", super.toString(), temp);
+        return String.format("%s, Temperture: %s C", super.toString(), temp);
 
     }
 

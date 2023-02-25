@@ -21,7 +21,7 @@ public abstract class Memory extends Device {
     @Override
     public String toString() {
 
-        return String.format("%s - %s %s MB", this.name, this.mtype, this.msize.getSize());
+        return String.format("%s %s MB", this.mtype, this.msize.getSize());
 
     }
 

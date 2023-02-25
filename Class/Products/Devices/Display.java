@@ -17,7 +17,7 @@ public class Display extends Device {
     @Override
     public String toString() {
         
-        return String.format("%s - %s inch", this.name,this.diagonal);
+        return String.format("%s inch", this.diagonal);
 
     }
 

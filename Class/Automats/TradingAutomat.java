@@ -1,15 +1,16 @@
 package Class.Automats;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import Class.Products.Product;
-import Class.Requests.Request;
 import Enum.TypeProduct;
 import Interface.IAutomat;
+import Interface.IRequest;
 
-public abstract class TradingAutomat<T extends Product> implements IAutomat<T> {
+public abstract class TradingAutomat<T extends Product> implements IAutomat<T>, Iterable<T> {
 
     protected List<T> products;
 
@@ -52,9 +53,36 @@ public abstract class TradingAutomat<T extends Product> implements IAutomat<T> {
 
     }
 
-    public List<T> getProducts(Request<T> req) {
+    public List<T> getProducts(IRequest<T> req) {
 
         return req.filter(this.products);
+
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+
+        Iterator<T> iterator = new Iterator<T>() {
+
+            private int index = 0;
+
+            @Override
+            public boolean hasNext() {
+
+                return index < products.size();
+
+            }
+
+            @Override
+            public T next() {
+
+                return products.get(index++);
+
+            }
+
+        };
+
+        return iterator;
 
     }
 

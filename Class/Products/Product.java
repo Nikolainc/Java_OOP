@@ -29,7 +29,7 @@ public abstract class Product {
     @Override
     public String toString() {
 
-        return String.format("\nType: %s\nName: %s", type, name);
+        return String.format("\nType: %s, Name: %s", type, name);
 
     }
 

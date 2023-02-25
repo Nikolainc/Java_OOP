@@ -23,7 +23,7 @@ public class Drinks extends Product {
     @Override
     public String toString() {
         
-        return String.format("%s\nVolume: %s ml", super.toString(), volume);
+        return String.format("%s, Volume: %s ml", super.toString(), volume);
         
     }
 
