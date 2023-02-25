@@ -23,12 +23,12 @@ class program {
         HotDrinks americano100 = new HotDrinks(AmericanoName, 100, 90);
         HotDrinks americano250 = new HotDrinks(AmericanoName, 250, 90);
 
-        coffeeMachine.addProduct(latte100);
-        coffeeMachine.addProduct(latte1001);
-        coffeeMachine.addProduct(latte100);
-        coffeeMachine.addProduct(latte250);
-        coffeeMachine.addProduct(americano100);
-        coffeeMachine.addProduct(americano250);
+        System.out.println(coffeeMachine.addProduct(latte100));
+        System.out.println(coffeeMachine.addProduct(latte1001));
+        System.out.println(coffeeMachine.addProduct(latte100));
+        System.out.println(coffeeMachine.addProduct(latte250));
+        System.out.println(coffeeMachine.addProduct(americano100));
+        System.out.println(coffeeMachine.addProduct(americano250));
 
         System.out.println(coffeeMachine.getProducts());
         
