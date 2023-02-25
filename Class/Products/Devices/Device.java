@@ -12,9 +12,16 @@ public abstract class Device extends Product{
 
     protected Device(String name, TypeDevice typeDevice, BrandType brand) {
 
-        super(name, TypeProduct.DEVICE);
+        super(brand + " " + name, TypeProduct.DEVICE);
         this.typeDevice = typeDevice;
         this.brand = brand;
+
+    }
+
+    @Override
+    public String toString() {
+
+        return String.format("%s\nBrand: %s\nDevice: %s", super.toString(), this.brand, this.typeDevice);
 
     }
 

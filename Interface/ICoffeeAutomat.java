@@ -1,7 +1,12 @@
 package Interface;
 
-public interface ICoffeeAutomat<T> extends IAutomat<T>{
+import java.util.List;
 
-    public T getProduct(String name, int volume, int temp);
+import Class.Products.Drinks.HotDrinks;
+import Class.Requests.Request;
+
+public interface ICoffeeAutomat<T extends HotDrinks> extends IAutomat<T> {
+
+    public List<T> getProducts(Request<T> req);
     
 }

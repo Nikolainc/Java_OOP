@@ -7,11 +7,18 @@ public class Display extends Device {
 
     protected int diagonal;
 
-    protected Display(String name, BrandType brand, int diagonal) {
+    public Display(String name, BrandType brand, int diagonal) {
 
         super(name, TypeDevice.DISPLAY, brand);
         this.diagonal = diagonal;
         
+    }
+
+    @Override
+    public String toString() {
+        
+        return String.format("%s - %s inch", this.name,this.diagonal);
+
     }
 
     public int gDiagonal() {

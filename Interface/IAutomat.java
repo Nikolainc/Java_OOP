@@ -2,12 +2,20 @@ package Interface;
 
 import java.util.List;
 
-public interface IAutomat<T> {
+import Class.Products.Product;
+import Class.Requests.Request;
+import Enum.TypeProduct;
+
+public interface IAutomat<T extends Product> {
     
-    public T getProduct(String name);
+    public List<T> getProducts(String name);
+
+    public List<T> getProducts(TypeProduct type);
+
+    public List<T> getProducts(Request<T> name);
 
     public boolean addProduct(T product);
 
-    public List<T> getAllProducts();
+    public List<T> getProducts();
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import Class.Automats.DrinksAutomat.DrinksAutomat;
 import Class.Products.Drinks.HotDrinks;
+import Class.Requests.Request;
 import Interface.ICoffeeAutomat;
 
 public class HotDrinksAutomat<T extends HotDrinks> extends DrinksAutomat<T> implements ICoffeeAutomat<T>{
@@ -14,58 +15,11 @@ public class HotDrinksAutomat<T extends HotDrinks> extends DrinksAutomat<T> impl
 
     }
 
-    public T getProduct(String name, int volume, int temp) {
-
-        var reqest = new HotDrinks(name, volume, temp);
-
-        if (super.products.indexOf(reqest) != -1) {
-
-            return super.products.get(super.products.indexOf(reqest));
-
-        }
-
-        return null;
-
-    }
-
     @Override
-    public boolean addProduct(T product) {
+    public List<T> getProducts(Request<T> req) {
         
-        if (super.products.contains(product)) {
-
-            return false;
-
-        } else {
-
-            return super.products.add(product);
-
-        }
+        return req.filter(super.products);
 
     }
-
-    @Override
-    public List<T> getAllProducts() {
-
-        return super.products;
-
-    }
-
-    @Override
-    public T getProduct(String name) {
-        
-        for (T item : super.products) {
-
-            if (item.equals(name)) {
-
-                return item;
-                
-            }
-            
-        }
-        
-        return null;
-
-    }
-
     
 }

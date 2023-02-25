@@ -5,36 +5,27 @@ import Enum.Device.MemorySize;
 import Enum.Device.MemoryType;
 import Enum.Device.TypeDevice;
 
-public class RamMemory extends Device {
+public class RamMemory extends Memory {
 
-    protected MemorySize memory;
-    protected MemoryType mtype;
     protected int frequency;
 
-    protected RamMemory(String name, BrandType brand, MemorySize memorySize, MemoryType mtype, int frequency) {
+    public RamMemory(String name, BrandType brand, MemorySize memorySize, int frequency) {
 
-        super(name, TypeDevice.RAM_MEMORY, brand);
-        this.memory = memorySize;
+        super(name, TypeDevice.RAM_MEMORY, brand, memorySize, MemoryType.DDR4);
         this.frequency = frequency;
-        this.mtype = mtype;
 
     }
 
-    public MemorySize gMemorySize() {
+    @Override
+    public String toString() {
 
-        return memory;
-
-    }
-
-    public MemoryType gMemoryType() {
-
-        return mtype;
+        return String.format("%s %s MHz", super.toString(), this.frequency);
 
     }
 
     public int gFrequency() {
 
-        return frequency;
+        return this.frequency;
         
     }
 
@@ -43,7 +34,7 @@ public class RamMemory extends Device {
         
         if (obj instanceof RamMemory) {
 
-            return super.equals(obj) && this.equals(((RamMemory)obj).gMemorySize(), ((RamMemory)obj).gMemoryType());
+            return super.equals(obj) && this.equals(((RamMemory)obj).gFrequency());
 
         }
 
@@ -51,21 +42,9 @@ public class RamMemory extends Device {
 
     }
 
-    public boolean equals(MemorySize memory, MemoryType mType) {
+    public boolean equals(int freq) {
 
-        return this.equals(memory) && this.equals(mType);
-
-    }
-
-    public boolean equals(MemorySize memory) {
-
-        return this.memory.equals(memory);
-
-    }
-
-    public boolean equals(MemoryType mType) {
-
-        return this.mtype.equals(mType);
+        return this.frequency == freq;
 
     }
     

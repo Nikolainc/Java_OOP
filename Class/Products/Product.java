@@ -38,11 +38,17 @@ public abstract class Product {
 
         if (obj instanceof Product) {
 
-            return this.name.equals(((Product) obj).getName());
+            return this.equals(((Product) obj).getName(), ((Product)obj).gTypeProduct());
 
         }
 
         return false;
+
+    }
+
+    public boolean equals(String obj, TypeProduct type) {
+
+        return this.equals(obj) && this.equals(type);
 
     }
 

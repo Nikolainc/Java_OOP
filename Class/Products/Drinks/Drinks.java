@@ -3,7 +3,7 @@ package Class.Products.Drinks;
 import Class.Products.Product;
 import Enum.TypeProduct;
 
-public abstract class Drinks extends Product {
+public class Drinks extends Product {
 
     protected int volume;
     
@@ -32,17 +32,11 @@ public abstract class Drinks extends Product {
 
         if (obj instanceof Drinks) {
 
-            return super.equals(obj) && (this.volume == ((Drinks) obj).getVolume());
+            return super.equals(obj) && this.volume == ((Drinks)obj).getVolume();
             
         }
         
         return false;
-    }
-    
-    public boolean equals(String obj, int vol) {
-
-        return super.equals(obj) && this.volume == vol;
-
     }
 
     public boolean equals(int volume) {

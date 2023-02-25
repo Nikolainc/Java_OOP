@@ -11,6 +11,8 @@ public enum BrandType {
     XIAOMI,
     MSI,
     INTEL,
-    AMD
+    AMD,
+    SAMSUNG,
+    HYNIX
     
 }

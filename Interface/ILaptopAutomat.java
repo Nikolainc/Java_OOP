@@ -1,10 +1,12 @@
 package Interface;
 
-import Enum.Device.BrandType;
-import Enum.Device.MemorySize;
+import java.util.List;
 
-public interface ILaptopAutomat<T> extends IAutomat<T>{
+import Class.Products.Devices.Laptop;
+import Class.Requests.Request;
 
-    public T getProduct(String name, BrandType brand, MemorySize size, MemorySize ram);
+public interface ILaptopAutomat<T extends Laptop> extends IAutomat<T>{
+
+    public List<T> getProducts(Request<T> req);
     
 }

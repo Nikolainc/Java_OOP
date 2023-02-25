@@ -5,16 +5,23 @@ import Enum.Device.TypeDevice;
 
 public class Processor extends Device{
 
-    protected int frequency;
+    protected float frequency;
 
-    protected Processor(String name, BrandType brand, int frequency) {
+    public Processor(String name, BrandType brand, float frequency) {
 
         super(name, TypeDevice.PROCESSOR, brand);
         this.frequency = frequency;
 
     }
 
-    public int gFrequency() {
+    @Override
+    public String toString() {
+
+        return String.format("%s - %s GHz", this.name, this.frequency);
+
+    }
+
+    public float gFrequency() {
 
         return this.frequency;
 
@@ -33,7 +40,7 @@ public class Processor extends Device{
 
     }
 
-    public boolean equals(int freq) {
+    public boolean equals(float freq) {
 
         return this.frequency == freq;
 
