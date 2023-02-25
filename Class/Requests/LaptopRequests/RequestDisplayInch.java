@@ -5,22 +5,21 @@ import java.util.stream.Collectors;
 
 import Class.Products.Devices.Laptop;
 import Class.Requests.Request;
-import Enum.Device.TypeOS;
 
-public class RequestOS<T extends Laptop> extends Request<T> {
+public class RequestDisplayInch<T extends Laptop> extends Request<T> {
 
-    protected TypeOS typeOS;
+    protected int inch;
 
-    public RequestOS(TypeOS typeOS) {
+    public RequestDisplayInch(int inch) {
 
-        this.typeOS = typeOS;
+        this.inch = inch;
 
     }
 
     @Override
     public List<T> filter(List<T> req) {
 
-        return req.stream().filter(element -> element.gTypeOS().equals(this.typeOS))
+        return req.stream().filter(element -> element.gDisplay().gDiagonal() == this.inch)
                 .collect(Collectors.toList());
 
     }

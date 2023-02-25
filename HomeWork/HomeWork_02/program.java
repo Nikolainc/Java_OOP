@@ -59,15 +59,10 @@ public class program {
         System.out.println(mvideo_laptops.addProduct(ASUS_02));
         System.out.println(mvideo_laptops.addProduct(APPLE_01));
 
-        System.out.println(mvideo_laptops.getProducts(new RequestMainMemorySize<Laptop>(100000)));
+        System.out.println(mvideo_laptops.getProducts(new RequestMemorySize<Laptop>(MemoryType.DDR5, 100)));
+        System.out.println(mvideo_laptops.getProducts(new RequestMemoryType<Laptop>(MemoryType.SSD)));
 
-        System.out.println(mvideo_laptops.getProducts(new RequestRamMemorySize<Laptop>(2000)));
-
-        System.out.println(mvideo_laptops.getProducts(new RequestOS<Laptop>(TypeOS.WINDOWS)));
         System.out.println(mvideo_laptops.getProducts(new RequestOS<Laptop>(TypeOS.FREEBSD)));
-        System.out.println(mvideo_laptops.getProducts(new RequestOS<Laptop>(TypeOS.MACOS)));
-
-        System.out.println(mvideo_laptops.getProducts());
         
     }
 
