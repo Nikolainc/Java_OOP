@@ -9,9 +9,9 @@ public class RamMemory extends Memory {
 
     protected int frequency;
 
-    public RamMemory(String name, BrandType brand, MemorySize memorySize, int frequency) {
+    public RamMemory(String name, BrandType brand, MemorySize memorySize, int frequency, MemoryType mtype) {
 
-        super(name, TypeDevice.RAM_MEMORY, brand, memorySize, MemoryType.DDR4);
+        super(name, TypeDevice.RAM_MEMORY, brand, memorySize, mtype);
         this.frequency = frequency;
 
     }

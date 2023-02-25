@@ -60,5 +60,25 @@ public class Laptop extends Device {
         return this.operationSystem;
 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj instanceof Laptop) {
+
+            return super.equals(obj) && this.equals(((Laptop)obj).gDisplay(), 
+                    ((Laptop) obj).gMainMemory(), ((Laptop) obj).gRamMemory(), 
+                    ((Laptop) obj).gProcessor(), ((Laptop) obj).gTypeOS());
+
+        }
+
+        return false;
+    }
+
+    public boolean equals(Display display, MainMemory mainMemory, RamMemory ramMemory, Processor processor, TypeOS typeOS) {
+
+        return this.display.equals(display) && this.memory.equals(mainMemory) && this.ramMemory.equals(ramMemory) && this.processor.equals(processor) && this.operationSystem.equals(typeOS);
+
+    }
     
 }

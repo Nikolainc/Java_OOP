@@ -16,7 +16,7 @@ public class RequestRamMemorySize<T extends Laptop> extends RequestMainMemorySiz
     @Override
     public List<T> filter(List<T> req) {
 
-        return req.stream().filter(element -> element.gRamMemory().gMemorySize().getSize() > this.size)
+        return req.stream().filter(element -> element.gRamMemory().gMemorySize().getSize() >= this.size)
                 .collect(Collectors.toList());
 
     }

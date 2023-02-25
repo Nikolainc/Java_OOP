@@ -40,9 +40,9 @@ public abstract class Memory extends Device {
     @Override
     public boolean equals(Object obj) {
 
-        if (obj instanceof MainMemory) {
+        if (obj instanceof Memory) {
 
-            return super.equals(obj) && this.equals(((MainMemory) obj).gMemorySize(), ((MainMemory) obj).gMemoryType());
+            return super.equals(obj) && this.equals(((Memory) obj).gMemorySize(), ((Memory) obj).gMemoryType());
 
         }
 

@@ -1,11 +1,8 @@
 package HomeWork.HomeWork_01;
 
 import Class.Automats.DrinksAutomat.HotDrinksAutomat.HotDrinksAutomat;
-import Class.Products.Product;
 import Class.Products.Drinks.HotDrinks;
-import Class.Requests.Request;
 import Class.Requests.DrinksRequests.RequestDrinks;
-import Class.Requests.Request.*;
 
 /* Создать наследника реализованного класса ГорячийНапиток с дополнительным полем int температура.
 Создать класс ГорячихНапитковАвтомат реализующий интерфейс ТорговыйАвтомат и реализовать перегруженный метод getProduct(int name, int volume, int temperature) выдающий продукт соответствующий имени, объему и температуре
@@ -34,7 +31,7 @@ class program {
         coffeeMachine.addProduct(americano100);
         coffeeMachine.addProduct(americano250);
 
-        System.out.println(coffeeMachine.getProducts(new RequestDrinks<HotDrinks>("Latte", 100)));
+        System.out.println(coffeeMachine.getProducts(new RequestDrinks<HotDrinks>("Latte", 250)));
         
     }
 }

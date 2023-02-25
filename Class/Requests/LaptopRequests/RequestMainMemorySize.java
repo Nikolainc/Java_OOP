@@ -20,7 +20,7 @@ public class RequestMainMemorySize<T extends Laptop> extends Request<T> {
     @Override
     public List<T> filter(List<T> req) {
 
-        return req.stream().filter(element -> element.gMainMemory().gMemorySize().getSize() > this.size).collect(Collectors.toList());
+        return req.stream().filter(element -> element.gMainMemory().gMemorySize().getSize() >= this.size).collect(Collectors.toList());
 
     }
     

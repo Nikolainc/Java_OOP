@@ -7,6 +7,6 @@ public enum TypeProduct {
     CHOCOLATE,
     COFFEE,
     TEA,
-    DEVICE
+    DEVICE,
     
 }
