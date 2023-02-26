@@ -11,11 +11,11 @@ import Enum.TypeProduct;
 import Interface.IAutomat;
 import Interface.IRequest;
 
-public abstract class TradingAutomat<T extends Product> implements IAutomat<T>, Iterable<T> {
+public class TradingAutomat<T extends Product> implements IAutomat<T>, Iterable<T> {
 
     protected List<T> products;
 
-    protected TradingAutomat() {
+    public TradingAutomat() {
         
         this.products = new ArrayList<T>();
         
