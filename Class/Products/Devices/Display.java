@@ -16,6 +16,12 @@ public class Display extends Device {
         
     }
 
+    public Display(BrandType brand, int diagonal) {
+
+        this(brand.toString(), BrandType.SAMSUNG, diagonal);
+
+    }
+
     @Override
     public String toString() {
         

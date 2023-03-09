@@ -37,8 +37,6 @@ class program {
         System.out.println(coffeeMachine.getProducts(new RequestHotDrinks<>("Latte", 250, 65)));
 
         System.out.println(coffeeMachine.getProducts(new RequestDrinks<>(250)));
-
-        /* System.out.println(coffeeMachine.getProducts()); */
         
     }
 }
